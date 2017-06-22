@@ -15,7 +15,7 @@ var gameStarted;
 var IMAGE_WIDTH = 150; 
 var IMAGE_HEIGHT = 210;
 
-var CATEGORY_IMAGE_WIDTH = 195;
+var CATEGORY_IMAGE_WIDTH = 135;
 var CATEGORY_IMAGE_HEIGHT = 108;
 
 var STAGE_WIDTH, STAGE_HEIGHT;
@@ -135,21 +135,28 @@ function initGraphics() {
 	// init potato
 	updatePotato();
 
-	// render the 2 categories to the screen
+	// render the 3 categories to the screen (this should be a loop...)
 	categories[0].scaleX = CATEGORY_IMAGE_WIDTH / categories[0].image.width;
 	categories[1].scaleX = CATEGORY_IMAGE_WIDTH / categories[1].image.width;
+	categories[2].scaleX = CATEGORY_IMAGE_WIDTH / categories[2].image.width;
 	categories[0].scaleY = CATEGORY_IMAGE_HEIGHT / categories[0].image.height;
 	categories[1].scaleY = CATEGORY_IMAGE_HEIGHT / categories[1].image.height;
+	categories[2].scaleY = CATEGORY_IMAGE_HEIGHT / categories[2].image.height;
 	categories[0].regX = categories[0].getBounds().width/2;
 	categories[1].regX = categories[1].getBounds().width/2;
+	categories[2].regX = categories[2].getBounds().width/2;
 	categories[0].regY = categories[0].getBounds().height/2;
 	categories[1].regY = categories[1].getBounds().height/2;
-	categories[0].x = STAGE_WIDTH/4 + 5;
-	categories[1].x = STAGE_WIDTH/4 * 3 - 5;
+	categories[2].regY = categories[2].getBounds().height/2;
+	categories[0].x = 82;
+	categories[1].x = STAGE_WIDTH/2;
+	categories[2].x = STAGE_WIDTH/2 + 155;
 	categories[0].y = STAGE_HEIGHT - categories[0].image.height * categories[0].scaleY + 35;
 	categories[1].y = STAGE_HEIGHT - categories[1].image.height * categories[1].scaleY + 35;
+	categories[2].y = STAGE_HEIGHT - categories[1].image.height * categories[1].scaleY + 35;
 	stage.addChild(categories[0]); 
 	stage.addChild(categories[1]);
+	stage.addChild(categories[2]);
 
 	renderQuestion(0); // render the first question
 
@@ -299,6 +306,10 @@ function setupManifest() {
 		{
 			src: PATH_TO_SUB_FOLDER + "category2.png",
 			id: "category2"
+		},
+		{
+			src: PATH_TO_SUB_FOLDER + "category3.png",
+			id: "category3"
 		},
 		{
 			src: PATH_TO_SUB_FOLDER + "question1.png",
