@@ -11,8 +11,15 @@
 	<script>
 
 	// CHANGE THIS VARIABLE TO THE DESIRED SUB FOLDER NAME
-	var SUB_FOLDER = "polynomials";
-	var answers = "22313";
+	var SUB_FOLDER = "<?=$_GET['title']?>";
+	var answers;
+
+	$.ajax({
+		url: "versions/" + SUB_FOLDER + "/answers.txt",
+		success: function(data) {
+			answers = data;
+		}
+	});
 
 	</script>
 	<script src="lib/ndgmr.Collision.js"></script>
