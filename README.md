@@ -1,2 +1,2 @@
-# bcln-game-potato_categories3
-BCLN HTML5 Educational Game
+# Potato Categories (3)
+WCLN HTML5 Educational Game
